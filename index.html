@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Veronika Meštanová – Môj príbeh</title>
+<meta name="description" content="Veronika Meštanová – Nečakaj na správny okamih. Vytvor si ho. Môj príbeh o odvahe, raste a slobode.">
+<meta property="og:title" content="Veronika Meštanová – My Story">
+<meta property="og:description" content="Courage. Growth. Freedom. Odvaha. Rast. Sloboda.">
+<meta property="og:image" content="images/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   ÚPRAVY – tu si zmeň farby, ak treba
+   ========================================================= */
+:root{
+  --black:#050807;
+  --ink:#0a110e;
+  --emerald:#1f8a64;
+  --emerald-bright:#3cc495;
+  --emerald-deep:#0d3b2c;
+  --gold:#c9a24d;
+  --text:#e9ece8;
+  --muted:#9aa8a1;
+  --line:rgba(201,162,77,.35);
+  --hair:rgba(255,255,255,.07);
+  --serif:'Cormorant Garamond', Georgia, serif;
+  --sans:'Montserrat', system-ui, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* ---------- Jazyky ---------- */
+html[lang="en"] [data-l="sk"], html[lang="sk"] [data-l="en"]{display:none !important}
+/* Kým nie je doplnený kontakt, kontaktné prvky sú skryté */
+body.no-contact .needs-contact{display:none !important}
+
+/* ---------- Mramor ---------- */
+.marble{position:relative;isolation:isolate;overflow:hidden}
+.marble::before{
+  content:"";position:absolute;inset:-10%;z-index:-2;
+  background:
+    radial-gradient(ellipse 60% 50% at 75% 30%, rgba(31,138,100,.55), transparent 70%),
+    radial-gradient(ellipse 40% 60% at 15% 85%, rgba(13,59,44,.9), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 90% 90%, rgba(31,138,100,.35), transparent 70%),
+    linear-gradient(160deg,#040706 0%,#07120d 45%,#03100a 100%);
+}
+.marble::after{
+  content:"";position:absolute;inset:0;z-index:-1;opacity:.55;mix-blend-mode:screen;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='900'%3E%3Cfilter id='n' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.006 .012' numOctaves='5' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .12  0 0 0 0 .55  0 0 0 0 .38  0 0 0 -2.2 1.35'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:900px 900px;
+}
+/* za textom v úvode je mramor jemnejší, aby sa text dobre čítal */
+.hero.marble::after{-webkit-mask-image:linear-gradient(100deg,rgba(0,0,0,.3) 0%,rgba(0,0,0,.55) 45%,#000 80%);mask-image:linear-gradient(100deg,rgba(0,0,0,.3) 0%,rgba(0,0,0,.55) 45%,#000 80%)}
+.veins{position:absolute;inset:0;z-index:-1;pointer-events:none;width:100%;height:100%}
+h1,h2,.hero .sub,.pull,.closing blockquote,.cap{text-wrap:balance}
+.veins path{fill:none;stroke:var(--gold);stroke-linecap:round}
+
+/* ---------- Navigácia ---------- */
+header{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+header.scrolled{background:rgba(5,8,7,.88);backdrop-filter:blur(10px);border-color:var(--hair)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.logo{font-family:var(--serif);font-size:30px;color:var(--gold);letter-spacing:-1px;font-style:italic}
+.nav ul{display:flex;gap:34px;list-style:none}
+.nav ul a{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--text);opacity:.8;transition:.3s}
+.nav ul a:hover{opacity:1;color:var(--emerald-bright)}
+.nav-right{display:flex;align-items:center;gap:18px}
+.lang{display:flex;border:1px solid var(--line)}
+.lang button{background:none;border:0;color:var(--muted);font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.15em;padding:8px 11px;cursor:pointer;transition:.3s}
+.lang button.active{background:var(--gold);color:var(--black)}
+.lang button:not(.active):hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:15px 26px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;border:1px solid var(--gold);color:var(--text);transition:.3s;cursor:pointer;background:transparent;font-family:var(--sans)}
+.btn:hover{background:var(--gold);color:var(--black)}
+.btn.solid{background:var(--emerald);border-color:var(--emerald);color:#fff}
+.btn.solid:hover{background:var(--emerald-bright);border-color:var(--emerald-bright);color:var(--black)}
+.btn .arr{transition:transform .3s}
+.btn:hover .arr{transform:translateX(4px)}
+.nav .btn{padding:11px 20px}
+.burger{display:none;background:none;border:0;color:var(--gold);font-size:26px;cursor:pointer}
+
+/* ---------- Hero ---------- */
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500;display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--gold)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08}
+h1{font-size:clamp(46px,6.4vw,84px);margin:22px 0 10px}
+h1 em,h2 em{font-style:italic;color:var(--emerald-bright)}
+.hero .sub{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.2vw,26px);color:var(--muted);margin-bottom:34px}
+.hero .lead{max-width:470px;color:var(--muted);margin-bottom:38px}
+html[lang="en"] .hero h1{margin-bottom:30px}
+.hero .ctas{display:flex;gap:16px;flex-wrap:wrap}
+.arch{position:relative;justify-self:center;width:min(420px,100%);aspect-ratio:3/4}
+.arch .frame{position:absolute;inset:0;border-radius:999px 999px 0 0;overflow:hidden;background:linear-gradient(170deg,var(--emerald-deep),var(--black));border:1px solid var(--hair)}
+.arch .frame img{width:100%;height:100%;object-fit:cover}
+.arch .outline{position:absolute;inset:-18px;border:1px solid var(--line);border-radius:999px 999px 0 0;border-bottom:0;pointer-events:none}
+.arch .mono{position:absolute;inset:0;display:none;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;font-size:120px;color:var(--gold);opacity:.6}
+.arch .frame.noimg .mono{display:flex}
+.arch .quote{position:absolute;right:-40px;bottom:40px;background:rgba(5,8,7,.85);backdrop-filter:blur(6px);padding:22px 26px;border-left:1px solid var(--gold);max-width:230px;font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.35}
+
+/* ---------- Citáty ---------- */
+.quotes{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);background:var(--ink)}
+.q-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.q{padding:64px 40px;position:relative}
+.q+.q{border-left:1px solid var(--hair)}
+.q .num{font-size:11px;letter-spacing:.2em;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.q .num::after{content:"";width:30px;height:1px;background:var(--gold)}
+.q .en{font-family:var(--serif);font-size:clamp(25px,2.4vw,31px);line-height:1.2;margin-bottom:14px}
+.q .en em{font-style:italic;color:var(--emerald-bright)}
+.q .tr{color:var(--muted);font-size:14px}
+
+/* ---------- Príbeh ---------- */
+section{position:relative}
+.pad{padding:120px 0}
+.sec-head .num{font-size:12px;color:var(--gold);letter-spacing:.2em;display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.sec-head .num::after{content:"";width:40px;height:1px;background:var(--gold)}
+h2{font-size:clamp(38px,4.6vw,60px);margin-bottom:28px}
+.story-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:start}
+.story-aside{position:sticky;top:110px}
+.story-photo{position:relative;margin-top:36px;aspect-ratio:4/5;overflow:hidden;border:1px solid var(--hair);background:linear-gradient(160deg,var(--emerald-deep),var(--black))}
+.story-photo img{width:100%;height:100%;object-fit:cover}
+.story-photo.noimg img{display:none}
+.story-photo::after{content:"";position:absolute;inset:14px;border:1px solid var(--line);pointer-events:none}
+.pillars{display:grid;gap:22px;margin-top:36px}
+.pillar{display:flex;gap:18px;align-items:flex-start}
+.pillar .ic{flex:0 0 46px;height:46px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold)}
+.pillar h4{font-weight:500;font-size:14px;margin-bottom:2px}
+.pillar p{font-size:13px;color:var(--muted);line-height:1.5}
+.story-text p{color:#c7cfcb;margin-bottom:24px;font-size:16.5px}
+.story-text .first::first-letter{font-family:var(--serif);float:left;font-size:78px;line-height:.8;padding:8px 12px 0 0;color:var(--gold)}
+.pull{margin:44px 0;padding:34px 0 34px 34px;border-left:1px solid var(--gold);font-family:var(--serif);font-style:italic;font-size:clamp(24px,2.6vw,32px);line-height:1.3;color:var(--text)}
+.pull span{color:var(--emerald-bright)}
+.message{margin-top:44px;padding:44px;background:linear-gradient(140deg,rgba(31,138,100,.14),rgba(5,8,7,.4));border:1px solid var(--hair);position:relative}
+.message::before{content:"“";position:absolute;top:-34px;left:30px;font-family:var(--serif);font-size:120px;color:var(--gold);line-height:1}
+.message p{color:var(--text);font-size:17px}
+.message p+p{margin-top:18px}
+
+/* ---------- Záver EN ---------- */
+.closing{text-align:center;padding:140px 0}
+.closing .eyebrow{justify-content:center}
+.closing .eyebrow::after{content:"";width:34px;height:1px;background:var(--gold)}
+.closing blockquote{font-family:var(--serif);font-size:clamp(34px,4.6vw,62px);line-height:1.15;max-width:960px;margin:30px auto 0}
+.closing blockquote em{color:var(--emerald-bright)}
+.closing .sig{margin-top:40px;font-family:var(--serif);font-style:italic;font-size:26px;color:var(--gold)}
+.goldline{width:60px;height:1px;background:var(--gold);margin:36px auto 0}
+
+/* ---------- Formulár ---------- */
+.form-sec{background:var(--ink);border-top:1px solid var(--hair)}
+.form-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px}
+.form-intro p{color:var(--muted);margin-bottom:20px}
+.contact-links{display:grid;gap:14px;margin-top:34px}
+.contact-links a{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border:1px solid var(--hair);transition:.3s}
+.contact-links a:hover{border-color:var(--gold)}
+.contact-links small{display:block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.contact-links strong{font-weight:500}
+form{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:44px;border:1px solid var(--hair);background:rgba(5,8,7,.6)}
+.f{display:flex;flex-direction:column;gap:8px}
+.f.full{grid-column:1/-1}
+label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:500}
+input,select,textarea{background:transparent;border:0;border-bottom:1px solid rgba(255,255,255,.18);color:var(--text);font-family:var(--sans);font-size:15px;padding:10px 0;outline:none;transition:border-color .3s;border-radius:0}
+select option{background:var(--ink)}
+input:focus,select:focus,textarea:focus{border-color:var(--emerald-bright)}
+textarea{resize:vertical;min-height:90px}
+.consent{grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;font-size:13px;color:var(--muted);text-transform:none;letter-spacing:0;font-weight:300}
+.consent input{margin-top:4px;accent-color:var(--emerald)}
+form .btn{grid-column:1/-1;justify-content:center}
+
+/* ---------- Footer ---------- */
+footer{border-top:1px solid var(--hair);padding:50px 0 40px;font-size:12px;color:var(--muted)}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.disc{margin-top:28px;font-size:11px;line-height:1.7;opacity:.75;max-width:820px}
+
+/* ---------- Album ---------- */
+.album{background:var(--ink);border-top:1px solid var(--hair)}
+.album-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px 60px;margin-bottom:54px;flex-wrap:wrap}
+.album-head h2{margin-bottom:0}
+.album-head p{max-width:400px;color:var(--muted)}
+.album-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tile{position:relative;margin:0;overflow:hidden;aspect-ratio:3/4;cursor:zoom-in;border:1px solid var(--hair);background:var(--emerald-deep)}
+.tile.wide{grid-column:span 2;aspect-ratio:auto}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease}
+.tile:hover img{transform:scale(1.045)}
+.tile::after{content:"";position:absolute;inset:12px;border:1px solid var(--line);opacity:0;transition:opacity .6s;pointer-events:none}
+.tile:hover::after{opacity:1}
+.tile figcaption{position:absolute;left:0;right:0;bottom:0;padding:80px 24px 22px;background:linear-gradient(to top,rgba(5,8,7,.96),rgba(5,8,7,.7) 50%,transparent)}
+.tag{display:block;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:6px}
+.cap{display:block;font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.35;color:var(--text)}
+
+/* ---------- Zväčšená fotka ---------- */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(3,5,4,.99);display:none;align-items:center;justify-content:center;padding:60px 80px}
+.lb.open{display:flex}
+.lb figure{margin:0;width:100%;max-width:1000px;text-align:center}
+.lb img{max-width:100%;max-height:76vh;margin:0 auto;border:1px solid var(--hair)}
+.lb figcaption{margin:18px auto 0;max-width:620px}
+.lb .cap{font-size:22px}
+.lb-btn{position:absolute;width:46px;height:46px;display:flex;align-items:center;justify-content:center;background:rgba(5,8,7,.6);border:1px solid var(--line);color:var(--gold);font-size:24px;line-height:1;cursor:pointer;transition:.3s}
+.lb-btn:hover{background:var(--gold);color:var(--black)}
+.lb-x{top:20px;right:20px}
+.lb-prev{left:20px;top:50%;transform:translateY(-50%)}
+.lb-next{right:20px;top:50%;transform:translateY(-50%)}
+
+/* ---------- Animácie ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 1s ease,transform 1s ease}
+.reveal.in{opacity:1;transform:none}
+.draw path{stroke-dasharray:1800;stroke-dashoffset:1800;animation:draw 3.2s ease forwards .4s}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.draw path{animation:none;stroke-dashoffset:0}}
+
+/* ---------- Mobil ---------- */
+@media (max-width:960px){
+  .nav ul{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;gap:0;background:rgba(5,8,7,.97);border-bottom:1px solid var(--hair)}
+  .nav ul.open{display:flex}
+  .nav ul li a{display:block;padding:18px 24px;border-top:1px solid var(--hair)}
+  .nav .btn{display:none}
+  .burger{display:block}
+  .hero-grid,.story-grid,.form-grid{grid-template-columns:1fr;gap:60px}
+  .hero{padding-top:110px}
+  .hero.marble::after{-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,.5) 50%,#000 85%);mask-image:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,.5) 50%,#000 85%)}
+  .arch{width:min(340px,86%)}
+  .arch .quote{right:-12px;bottom:24px;font-size:17px;padding:16px 18px}
+  .q-grid{grid-template-columns:1fr}
+  .q+.q{border-left:0;border-top:1px solid var(--hair)}
+  .q{padding:48px 24px}
+  .story-aside{position:static}
+  .pad{padding:90px 0}
+  form{grid-template-columns:1fr;padding:28px 22px}
+  .message{padding:34px 24px}
+  .closing{padding:100px 0}
+  .album-grid{grid-template-columns:1fr 1fr;grid-auto-flow:dense}
+  .tile.wide{grid-column:1/-1;aspect-ratio:16/10}
+}
+@media (max-width:600px){
+  /* na mobile je popis pod fotkou, aby nezakrýval ľudí na fotke */
+  .album-grid{grid-template-columns:1fr;gap:36px}
+  .tile,.tile.wide{aspect-ratio:auto;border:0;background:none}
+  .tile img{position:relative;inset:auto;height:auto;aspect-ratio:4/5;border:1px solid var(--hair)}
+  .tile.wide img{aspect-ratio:4/3}
+  .tile:hover img{transform:none}
+  .tile::after{display:none}
+  .tile figcaption{position:static;padding:16px 2px 0;background:none}
+  .cap{font-size:19px}
+  .lb{padding:70px 14px 90px}
+  .lb img{max-height:68vh}
+  .lb .cap{font-size:19px}
+  .lb-prev,.lb-next{top:auto;bottom:22px;transform:none}
+  .lb-prev{left:calc(50% - 56px)}
+  .lb-next{right:calc(50% - 56px)}
+}
+</style>
+</head>
+<body id="top" class="no-contact">
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" class="logo">VM</a>
+    <ul id="menu">
+      <li><a href="#top"><span data-l="sk">Domov</span><span data-l="en">Home</span></a></li>
+      <li><a href="#pribeh"><span data-l="sk">Môj príbeh</span><span data-l="en">My Story</span></a></li>
+      <li><a href="#vizia"><span data-l="sk">Vízia</span><span data-l="en">Vision</span></a></li>
+      <li><a href="#album">Album</a></li>
+      <li class="needs-contact"><a href="#formular"><span data-l="sk">Kontakt</span><span data-l="en">Contact</span></a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Jazyk / Language">
+        <button type="button" data-set="sk">SK</button>
+        <button type="button" data-set="en">EN</button>
+      </div>
+      <a href="#formular" class="btn needs-contact"><span data-l="sk">Napíš mi</span><span data-l="en">Write to me</span> <span class="arr">→</span></a>
+      <button class="burger" id="burger" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero marble">
+  <svg class="veins draw" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-20 640 C 120 600, 160 700, 260 690 S 380 760, 430 900" stroke-width="1.2" opacity=".75"/>
+    <path d="M1460 90 C 1350 140, 1300 120, 1240 200 S 1150 260, 1120 380" stroke-width="1" opacity=".6"/>
+    <path d="M1240 200 C 1280 260, 1330 270, 1460 300" stroke-width=".7" opacity=".45"/>
+  </svg>
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <div class="eyebrow"><span data-l="sk">Môj príbeh</span><span data-l="en">My Story</span></div>
+      <h1>Don't wait for the right moment. <em>Create it.</em></h1>
+      <p class="sub" data-l="sk">Nečakaj na správny okamih. Vytvor si ho.</p>
+      <p class="lead" data-l="sk">Som Veronika. Rozhodla som sa prestať čakať a začať budovať život, ktorý bude odrážať to, kým som a kým sa chcem stať.</p>
+      <p class="lead" data-l="en">I'm Veronika. I decided to stop waiting and start building a life that reflects who I am and who I want to become.</p>
+      <div class="ctas">
+        <a href="#pribeh" class="btn solid"><span data-l="sk">Môj príbeh</span><span data-l="en">My Story</span> <span class="arr">→</span></a>
+        <a href="#formular" class="btn needs-contact"><span data-l="sk">Napíš mi</span><span data-l="en">Write to me</span></a>
+      </div>
+    </div>
+    <div class="arch reveal">
+      <div class="outline"></div>
+      <div class="frame" id="heroFrame">
+        <img src="images/hero.jpg" alt="Veronika Meštanová" onerror="this.remove();document.getElementById('heroFrame').classList.add('noimg')">
+        <div class="mono">VM</div>
+      </div>
+      <div class="quote">„Courage. Growth. Freedom.“</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CITÁTY ================= -->
+<section class="quotes">
+  <div class="wrap q-grid">
+    <div class="q reveal">
+      <div class="num">01</div>
+      <p class="en">Don't wait for the right moment. <em>Create it.</em></p>
+      <p class="tr" data-l="sk">Nečakaj na správny okamih. Vytvor si ho.</p>
+    </div>
+    <div class="q reveal">
+      <div class="num">02</div>
+      <p class="en">Today is yesterday's <em>tomorrow.</em></p>
+      <p class="tr" data-l="sk">Dnešok je zajtrajšok, na ktorý si včera čakala.</p>
+    </div>
+    <div class="q reveal">
+      <div class="num">03</div>
+      <p class="en">Courage. Growth. <em>Freedom.</em></p>
+      <p class="tr" data-l="sk">Odvaha. Rast. Sloboda.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRÍBEH ================= -->
+<section class="pad" id="pribeh">
+  <div class="wrap story-grid">
+    <aside class="story-aside reveal">
+      <div class="sec-head"><div class="num">04</div></div>
+      <h2 data-l="sk">Môj <em>príbeh</em></h2>
+      <h2 data-l="en">My <em>Story</em></h2>
+      <div class="story-photo" id="storyPhoto">
+        <img src="images/story.jpg" alt="Veronika" onerror="document.getElementById('storyPhoto').classList.add('noimg')">
+      </div>
+      <div class="pillars">
+        <div class="pillar"><div class="ic">✦</div><div>
+          <h4><span data-l="sk">Odvaha</span><span data-l="en">Courage</span></h4>
+          <p><span data-l="sk">Vystúpiť z komfortnej zóny.</span><span data-l="en">Stepping out of my comfort zone.</span></p>
+        </div></div>
+        <div class="pillar"><div class="ic">✦</div><div>
+          <h4><span data-l="sk">Rast</span><span data-l="en">Growth</span></h4>
+          <p><span data-l="sk">Investovať do seba každý deň.</span><span data-l="en">Investing in myself every day.</span></p>
+        </div></div>
+        <div class="pillar"><div class="ic">✦</div><div>
+          <h4><span data-l="sk">Sloboda</span><span data-l="en">Freedom</span></h4>
+          <p><span data-l="sk">Rozhodovať o svojom čase a živote.</span><span data-l="en">Deciding about my own time and life.</span></p>
+        </div></div>
+      </div>
+    </aside>
+
+    <!-- SLOVENSKY -->
+    <div class="story-text reveal" data-l="sk">
+      <p class="first">Niekoľko rokov pracujem v gastronómii, kde som sa naučila oveľa viac než len svoju prácu. Naučila som sa komunikovať s ľuďmi, organizovať, zvládať náročné situácie, preberať zodpovednosť a nachádzať riešenia aj vtedy, keď veci nejdú podľa plánu. Každá skúsenosť ma niekam posunula a za všetko, čo ma naučila, som vďačná.</p>
+      <p>Napriek tomu som v sebe už dlhší čas cítila, že toto nie je miesto, kde sa chcem vidieť aj o niekoľko rokov. Vedela som, že vo mne je viac. Väčší potenciál, väčšie sny a túžba vytvoriť si život, ktorý bude skutočne odrážať to, kým som a kým sa chcem stať.</p>
+      <div class="pull vizia">Pre mňa úspech neznamená iba zarábať viac. Znamená mať <span>slobodu</span> rozhodovať o svojom čase.</div>
+      <p>Pre mňa úspech neznamená iba zarábať viac. Znamená mať slobodu rozhodovať o svojom čase, cestovať, objavovať svet, spoznávať nových ľudí a neustále rásť. Chcem byť finančne nezávislá, budovať niečo vlastné a obklopovať sa ľuďmi, ktorí majú podobné hodnoty, ambície a chuť posúvať svoje hranice.</p>
+      <p>Preto som sa tento rok rozhodla urobiť prvý skutočný krok. Začala som investovať do seba, svojho osobnostného rozvoja a nových zručností. Začala som vystupovať zo svojej komfortnej zóny, učiť sa veci, ktoré sú pre mňa nové, a postupne meniť spôsob, akým premýšľam o svojich možnostiach.</p>
+      <p>Nie som na konci svojej cesty. Práve naopak — som na jej začiatku. Učím sa, rastiem, objavujem svoj potenciál a budujem základy života, po ktorom túžim. Viem, že skutočná zmena nepríde zo dňa na deň, ale verím, že každý krok, ktorý dnes urobím, ma približuje k mojej vízii.</p>
+      <p>A ak je niečo, čo by som chcela odkázať každej žene, ktorá cíti, že chce od života viac, je to toto:</p>
+      <div class="message">
+        <p>Nemusíš mať všetky odpovede, dokonalý plán ani ideálne podmienky. Stačí, keď sa rozhodneš začať veriť sama sebe a urobíš prvý krok.</p>
+        <p>Pretože tvoj život nemusí vyzerať tak, ako sa od teba očakáva. Môže vyzerať presne tak, ako si ho vytvoríš ty sama.</p>
+      </div>
+    </div>
+
+    <!-- ENGLISH -->
+    <div class="story-text reveal" data-l="en">
+      <p class="first">For several years I have worked in hospitality, where I learned far more than just my job. I learned how to communicate with people, organise, handle demanding situations, take responsibility and find solutions even when things don't go to plan. Every experience moved me forward, and I am grateful for everything it taught me.</p>
+      <p>Still, for a long time I felt that this was not the place where I wanted to see myself in a few years. I knew there was more in me. Greater potential, bigger dreams and a longing to create a life that truly reflects who I am and who I want to become.</p>
+      <div class="pull vizia">For me, success doesn't just mean earning more. It means having the <span>freedom</span> to decide about my own time.</div>
+      <p>For me, success doesn't just mean earning more. It means having the freedom to decide about my own time, to travel, explore the world, meet new people and keep growing. I want to be financially independent, build something of my own and surround myself with people who share similar values, ambitions and the drive to push their limits.</p>
+      <p>That's why this year I decided to take my first real step. I started investing in myself, my personal development and new skills. I began stepping out of my comfort zone, learning things that are new to me, and gradually changing the way I think about my possibilities.</p>
+      <p>I'm not at the end of my journey. Quite the opposite — I'm at its very beginning. I'm learning, growing, discovering my potential and laying the foundations of the life I long for. I know real change doesn't happen overnight, but I believe every step I take today brings me closer to my vision.</p>
+      <p>And if there is one thing I would like to tell every woman who feels she wants more from life, it is this:</p>
+      <div class="message">
+        <p>You don't need all the answers, a perfect plan or ideal conditions. All it takes is deciding to start believing in yourself and taking the first step.</p>
+        <p>Because your life doesn't have to look the way others expect it to. It can look exactly the way you create it yourself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ALBUM ================= -->
+<section class="album pad" id="album">
+  <div class="wrap">
+    <div class="album-head reveal">
+      <div>
+        <div class="sec-head"><div class="num">05</div></div>
+        <h2 data-l="sk">Odkiaľ idem a <em>kam smerujem.</em></h2>
+        <h2 data-l="en">Where I come from and <em>where I'm going.</em></h2>
+      </div>
+      <p data-l="sk">Kúsok z mojej cesty – od začiatkov až po miesta a ľudí, ktorí ma inšpirujú.</p>
+      <p data-l="en">A glimpse of my journey – from where I started to the places and people that inspire me.</p>
+    </div>
+
+    <div class="album-grid">
+      <figure class="tile reveal">
+        <img src="images/zaciatky.jpg" alt="Veronika v pracovnej uniforme" loading="lazy">
+        <figcaption>
+          <span class="tag"><span data-l="sk">Začiatky</span><span data-l="en">Where I started</span></span>
+          <span class="cap"><span data-l="sk">Gastronómia ma naučila komunikovať s ľuďmi, zvládať náročné situácie a nachádzať riešenia. Som za ňu vďačná.</span><span data-l="en">Hospitality taught me how to communicate with people, handle tough situations and find solutions. I'm grateful for it.</span></span>
+        </figcaption>
+      </figure>
+      <figure class="tile wide reveal">
+        <img src="images/ludia.jpg" alt="Spoločná fotka z eventu" loading="lazy" style="object-position:50% 62%">
+        <figcaption>
+          <span class="tag"><span data-l="sk">Ľudia okolo mňa</span><span data-l="en">My people</span></span>
+          <span class="cap"><span data-l="sk">Ľudia s podobnými hodnotami, ambíciami a chuťou posúvať svoje hranice. Presne takých chcem mať okolo seba.</span><span data-l="en">People with similar values, ambitions and the drive to push their limits. Exactly the kind I want around me.</span></span>
+        </figcaption>
+      </figure>
+      <figure class="tile reveal">
+        <img src="images/rimini.jpg" alt="Veronika s kamarátkami v Rimini" loading="lazy" style="object-position:50% 70%">
+        <figcaption>
+          <span class="tag">Rimini · The Mastery</span>
+          <span class="cap"><span data-l="sk">Ženy, ktoré chcú od života viac. Spolu sa každý krok robí ľahšie.</span><span data-l="en">Women who want more from life. Every step feels easier together.</span></span>
+        </figcaption>
+      </figure>
+      <figure class="tile reveal">
+        <img src="images/monako.jpg" alt="Veronika v Monaku" loading="lazy" style="object-position:50% 60%">
+        <figcaption>
+          <span class="tag"><span data-l="sk">Monako</span><span data-l="en">Monaco</span></span>
+          <span class="cap"><span data-l="sk">Cestovať, objavovať svet, spoznávať nových ľudí – aj toto je pre mňa úspech.</span><span data-l="en">Travelling, exploring the world, meeting new people – this is success to me too.</span></span>
+        </figcaption>
+      </figure>
+      <figure class="tile reveal">
+        <img src="images/sloboda.jpg" alt="Veronika pod palmami" loading="lazy" style="object-position:50% 60%">
+        <figcaption>
+          <span class="tag"><span data-l="sk">Sloboda</span><span data-l="en">Freedom</span></span>
+          <span class="cap"><span data-l="sk">Sloboda rozhodovať o svojom čase. Presne za týmto pocitom idem.</span><span data-l="en">The freedom to decide about my own time. That's exactly the feeling I'm going after.</span></span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Zväčšená fotka po kliknutí -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Album">
+  <button type="button" class="lb-btn lb-x" id="lbX" aria-label="Zavrieť / Close">×</button>
+  <button type="button" class="lb-btn lb-prev" id="lbPrev" aria-label="Predchádzajúca / Previous">‹</button>
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button type="button" class="lb-btn lb-next" id="lbNext" aria-label="Ďalšia / Next">›</button>
+</div>
+
+<!-- ================= ZÁVER ================= -->
+<section class="closing marble">
+  <svg class="veins" viewBox="0 0 1440 600" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-20 120 C 90 160, 140 110, 220 190 S 300 280, 360 260" stroke-width="1" opacity=".55"/>
+    <path d="M1460 520 C 1360 470, 1320 520, 1240 450 S 1150 400, 1090 430" stroke-width="1" opacity=".55"/>
+  </svg>
+  <div class="wrap reveal">
+    <div class="eyebrow">The beginning</div>
+    <blockquote>This is more than a career change. It’s the beginning of a life built on <em>my own terms.</em></blockquote>
+    <div class="sig">— Veronika</div>
+    <div class="goldline"></div>
+  </div>
+</section>
+
+<!-- ================= FORMULÁR (zobrazí sa až po doplnení WhatsApp čísla) ================= -->
+<section class="form-sec pad needs-contact" id="formular">
+  <div class="wrap form-grid">
+    <div class="form-intro reveal">
+      <div class="sec-head"><div class="num">06</div></div>
+      <h2 data-l="sk">Napíš <em>mi.</em></h2>
+      <h2 data-l="en">Write <em>to me.</em></h2>
+      <p data-l="sk">Cítiš, že aj ty chceš od života viac? Vyplň krátky formulár – po odoslaní sa ti otvorí WhatsApp s pripravenou správou, stačí ju poslať.</p>
+      <p data-l="en">Do you feel you want more from life too? Fill in the short form – once you send it, WhatsApp opens with a ready-made message, you just hit send.</p>
+      <p data-l="sk">Je to nezáväzné. Údaje použijem iba na to, aby som ti odpovedala.</p>
+      <p data-l="en">There's no commitment. I'll only use your details to reply to you.</p>
+      <div class="contact-links">
+        <a href="#" id="waLink" target="_blank" rel="noopener"><span><small>WhatsApp</small><strong id="waText"></strong></span><span>→</span></a>
+        <a href="#" id="igLink" target="_blank" rel="noopener"><span><small>Instagram</small><strong id="igText"></strong></span><span>→</span></a>
+      </div>
+    </div>
+
+    <form id="leadForm" class="reveal" novalidate>
+      <div class="f"><label for="meno"><span data-l="sk">Meno a priezvisko</span><span data-l="en">Full name</span></label><input id="meno" required></div>
+      <div class="f"><label for="tel"><span data-l="sk">Telefón</span><span data-l="en">Phone</span></label><input id="tel" type="tel" required></div>
+      <div class="f"><label for="vek"><span data-l="sk">Vek</span><span data-l="en">Age</span></label><input id="vek" type="number" min="16" max="99"></div>
+      <div class="f"><label for="mesto"><span data-l="sk">Mesto / krajina</span><span data-l="en">City / country</span></label><input id="mesto"></div>
+      <div class="f full"><label for="praca"><span data-l="sk">Aktuálna práca</span><span data-l="en">Current job</span></label><input id="praca"></div>
+      <div class="f full"><label for="zaujem"><span data-l="sk">Čo ťa zaujíma?</span><span data-l="en">What are you interested in?</span></label><select id="zaujem"></select></div>
+      <div class="f full"><label for="preco"><span data-l="sk">Prečo ťa to zaujíma?</span><span data-l="en">Why does it interest you?</span></label><textarea id="preco"></textarea></div>
+      <label class="consent"><input type="checkbox" id="suhlas" required>
+        <span data-l="sk">Súhlasím so spracovaním osobných údajov na účel odpovede na moju správu.</span>
+        <span data-l="en">I agree to the processing of my personal data for the purpose of replying to my message.</span></label>
+      <button type="submit" class="btn solid"><span data-l="sk">Odoslať cez WhatsApp</span><span data-l="en">Send via WhatsApp</span> <span class="arr">→</span></button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <span class="logo">VM</span>
+      <span>© <span id="yr"></span> Veronika Meštanová · All rights reserved</span>
+    </div>
+    <p class="disc"><span data-l="sk">Obsah tejto stránky odráža moju osobnú skúsenosť a má informatívny charakter. Nepredstavuje finančné poradenstvo a negarantuje žiadny zárobok.<br></span><span data-l="en">The content of this page reflects my personal experience and is for information only. It does not constitute financial advice.<br></span>This information is only for reference purposes and is not a guarantee of earning.</p>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   ÚPRAVY – sem doplň Veronikine kontakty
+   Kým je WHATSAPP prázdne, formulár a kontakty sa na stránke vôbec nezobrazia.
+   ========================================================= */
+const WHATSAPP = "";     // číslo bez + a medzier, napr. "421905123456"
+const INSTAGRAM = "";    // iba meno účtu bez @, napr. "veronika.mestanova"
+
+/* ---------- Texty pre formulár a WhatsApp ---------- */
+const T = {
+  sk: {
+    title: 'Veronika Meštanová – Môj príbeh',
+    options: ['Chcem vedieť viac o tom, čo robíš','Osobnostný rozvoj','Vlastný online biznis','Finančná nezávislosť','Ešte neviem, chcem info'],
+    errFill: 'Prosím, vyplň meno a telefón.',
+    errConsent: 'Prosím, potvrď súhlas so spracovaním údajov.',
+    hello: 'Ahoj Veronika! 👋 Mám záujem dozvedieť sa viac.',
+    labels: ['Meno','Telefón','Vek','Mesto / krajina','Aktuálna práca','Zaujíma ma','Prečo']
+  },
+  en: {
+    title: 'Veronika Meštanová – My Story',
+    options: ['I want to know more about what you do','Personal development','My own online business','Financial independence','Not sure yet, I want info'],
+    errFill: 'Please fill in your name and phone number.',
+    errConsent: 'Please confirm your consent to data processing.',
+    hello: 'Hi Veronika! 👋 I would like to know more.',
+    labels: ['Name','Phone','Age','City / country','Current job','Interested in','Why']
+  }
+};
+
+let lang = 'sk';
+function setLang(l){
+  lang = T[l] ? l : 'sk';
+  document.documentElement.lang = lang;
+  document.title = T[lang].title;
+  document.querySelectorAll('.lang button').forEach(b => b.classList.toggle('active', b.dataset.set === lang));
+  const sel = document.getElementById('zaujem'), i = sel.selectedIndex;
+  sel.innerHTML = T[lang].options.map(o => '<option>' + o + '</option>').join('');
+  if (i > 0) sel.selectedIndex = i;
+  try { localStorage.setItem('lang', lang); } catch(e) {}
+}
+document.querySelectorAll('.lang button').forEach(b => b.onclick = () => setLang(b.dataset.set));
+let start = new URLSearchParams(location.search).get('lang');
+if (!start) { try { start = localStorage.getItem('lang'); } catch(e) {} }
+setLang(start || 'sk');
+
+/* ---------- Kontakty (zobrazia sa iba ak sú vyplnené) ---------- */
+if (WHATSAPP) {
+  document.body.classList.remove('no-contact');
+  document.getElementById('waLink').href = 'https://wa.me/' + WHATSAPP;
+  document.getElementById('waText').textContent = '+' + WHATSAPP.replace(/^(\d{3})(\d{3})(\d{3})(\d+)$/, '$1 $2 $3 $4');
+}
+if (INSTAGRAM) {
+  document.getElementById('igLink').href = 'https://www.instagram.com/' + INSTAGRAM + '/';
+  document.getElementById('igText').textContent = '@' + INSTAGRAM;
+} else {
+  document.getElementById('igLink').remove();
+}
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* ---------- Formulár → WhatsApp ---------- */
+document.getElementById('leadForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const t = T[lang], L = t.labels;
+  const v = id => document.getElementById(id).value.trim();
+  if (!v('meno') || !v('tel')) { alert(t.errFill); return; }
+  if (!document.getElementById('suhlas').checked) { alert(t.errConsent); return; }
+  const lines = [
+    t.hello, '',
+    L[0] + ': ' + v('meno'),
+    L[1] + ': ' + v('tel'),
+    v('vek') && L[2] + ': ' + v('vek'),
+    v('mesto') && L[3] + ': ' + v('mesto'),
+    v('praca') && L[4] + ': ' + v('praca'),
+    L[5] + ': ' + v('zaujem'),
+    v('preco') && L[6] + ': ' + v('preco')
+  ].filter(Boolean);
+  window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(lines.join('\n')), '_blank');
+});
+
+/* ---------- Album – zväčšenie fotky ---------- */
+const tiles = [...document.querySelectorAll('.tile')];
+const lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'), lbCap = document.getElementById('lbCap');
+let cur = 0, sx = null;
+function showLb(i){
+  cur = (i + tiles.length) % tiles.length;
+  const im = tiles[cur].querySelector('img');
+  lbImg.src = im.src; lbImg.alt = im.alt;
+  lbCap.innerHTML = tiles[cur].querySelector('figcaption').innerHTML;
+}
+function closeLb(){ lb.classList.remove('open'); document.body.style.overflow = ''; }
+tiles.forEach((t, i) => t.addEventListener('click', () => { showLb(i); lb.classList.add('open'); document.body.style.overflow = 'hidden'; }));
+document.getElementById('lbX').onclick = closeLb;
+document.getElementById('lbPrev').onclick = e => { e.stopPropagation(); showLb(cur - 1); };
+document.getElementById('lbNext').onclick = e => { e.stopPropagation(); showLb(cur + 1); };
+lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+document.addEventListener('keydown', e => {
+  if (!lb.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLb();
+  if (e.key === 'ArrowLeft') showLb(cur - 1);
+  if (e.key === 'ArrowRight') showLb(cur + 1);
+});
+lb.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, {passive:true});
+lb.addEventListener('touchend', e => {
+  if (sx === null) return;
+  const dx = e.changedTouches[0].clientX - sx;
+  if (Math.abs(dx) > 50) showLb(cur + (dx < 0 ? 1 : -1));
+  sx = null;
+});
+
+/* ---------- Menu, header, animácie ---------- */
+const menu = document.getElementById('menu');
+document.getElementById('burger').onclick = () => menu.classList.toggle('open');
+menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+document.querySelectorAll('a[href="#vizia"]').forEach(a => a.addEventListener('click', ev => {
+  ev.preventDefault();
+  const el = document.querySelector('.story-text[data-l="' + lang + '"] .vizia');
+  if (el) window.scrollTo({top: el.getBoundingClientRect().top + scrollY - 120, behavior: 'smooth'});
+}));
+const hdr = document.getElementById('hdr');
+addEventListener('scroll', () => hdr.classList.toggle('scrolled', scrollY > 40), {passive:true});
+const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } }), {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
